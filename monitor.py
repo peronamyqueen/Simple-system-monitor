@@ -27,6 +27,11 @@ def show_stats():
     net = psutil.net_io_counters()
     table.add_row("Net Sent", f"{net.bytes_sent // (1024 ** 2)} MB")
     table.add_row("Net Received", f"{net.bytes_recv // (1024 ** 2)} MB")
+    
+    #Battery
+    battery = psutil.sensors_battery()
+    table.add_row("Battery Power", f"{battery.percent}")
+    table.add_row("Minutes before power loss" , f"{battery.secsleft // 60}")
 
     console.clear()
     console.print(table)
