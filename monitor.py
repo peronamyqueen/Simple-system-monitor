@@ -33,5 +33,5 @@ def show_stats():
 
 while True:
     show_stats()
-    time.sleep(1)
+    time.sleep(0.5)
 
